@@ -1,0 +1,19 @@
+The different exceptions:
+    Because I have different text field objects in my project,
+    they all can generate exceptions.
+    Since there are a variety of different foods, I figured that creating 
+    an exception for an invalid food name would not make much sense. However,
+    I created methods that would generate exceptions for invalid food flavors,
+    textures, and types. 
+
+    For the invalid type exception, it would be shown on the pane
+    that the user input is invalid if the user enters something other than,
+    "fruit," "vegetable," "grain," or "meat."
+
+    For the invalid flavor exception, it would be shown on the pane
+    that the user input is invalid if the user enters something other than,
+    "sweet," "bitter," "sour," or "salty."
+
+    For the invalid texture exception, it would be shown on the pane
+    that the user input is invalid if the user enters something other than,
+    "soft," "crunchy," "chewy," or "smooth."

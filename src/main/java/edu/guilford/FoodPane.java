@@ -2,6 +2,9 @@ package edu.guilford;
 
 import java.io.File;
 
+import edu.guilford.Food.InvalidFlavorException;
+import edu.guilford.Food.InvalidTextureException;
+import edu.guilford.Food.InvalidTypeException;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -91,9 +94,27 @@ public class FoodPane extends GridPane {
             textureLabel.setText("Texture: " + textureField.getText());
             //update the food attributes
             food.setName(nameField.getText());
-            food.setType(typeField.getText());
-            food.setFlavor(flavorField.getText());
-            food.setTexture(textureField.getText());
+            //update the food attributes if the exception is not thrown
+            // food.setType(typeField.getText());
+            try {
+                food.setType(typeField.getText());
+            } catch (InvalidTypeException e1) {
+                this.add(new Label(e1.getMessage()), 0, 6, 2, 1);
+            }
+
+            //food.setFlavor(flavorField.getText());
+            try {
+                food.setFlavor(flavorField.getText());
+            } catch (InvalidFlavorException e1) {
+                this.add(new Label(e1.getMessage()), 0, 8, 2, 1);
+            }
+            
+            //food.setTexture(textureField.getText());
+            try {
+                food.setTexture(textureField.getText());
+            } catch (InvalidTextureException e1) {
+                this.add(new Label(e1.getMessage()), 0, 10, 2, 1);
+            }
         });
 
         //add a listener for the slider that rotates the image
@@ -108,6 +129,8 @@ public class FoodPane extends GridPane {
             //rotate the image by 45 degrees
             imageView.setRotate(imageView.getRotate() + 45);
         });
+
+        
 
 
         
